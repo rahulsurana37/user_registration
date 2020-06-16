@@ -3,9 +3,12 @@
 shopt -s extglob
 echo "Welcome to User Registration Exercise"
 read -p "Enter First Name: " first
-if [[ $first =~ ^[A-Z]{1}+[a-z]{2,}$ ]]
+read -p "Enter Second Name: " second
+pat = "^[A-Z]{1}+[a-z]{2,}$"
+
+if [[ $first =~ $pat && $second =~ $pat ]]
 then
-	echo "Valid First Name";
+	echo "Valid Name";
 else
-	echo "Invalid First Name. Please Re-Enter!";
+	echo "Invalid Name. Please Re-Enter!";
 fi
