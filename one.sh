@@ -34,3 +34,14 @@ function mobile_check(){
 	fi
 }
 mobile_check
+
+read -p "Enter your Password: " pass
+function password_check(){
+	passpattern1="^([a-zA-Z0-9!@#]{8,})$"
+	if [[ $pass =~ $passpattern1 ]]; then
+		echo "Password is Valid."
+	else
+		echo "Password is Invalid. Please try again."
+	fi
+}
+password_check
