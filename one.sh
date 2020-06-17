@@ -38,10 +38,15 @@ mobile_check
 read -p "Enter your Password: " pass
 function password_check(){
 	passpattern1="^([a-zA-Z0-9!@#]{8,})$"
+	passpattern2="^([a-z0-9!@#]*)[A-Z]+([a-z0-9!@#]*$)"
 	if [[ $pass =~ $passpattern1 ]]; then
-		echo "Password is Valid."
+		if [[ $pass =~ $passpattern2 ]]; then	
+			echo "Password is Valid."
+		else
+			echo "Error - At least one Upper case is required. Please try again"
+		fi
 	else
-		echo "Password is Invalid. Please try again."
+		echo "Error - Password should be of atleast 8 characters. Please try again."
 	fi
 }
 password_check
