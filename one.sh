@@ -39,9 +39,14 @@ read -p "Enter your Password: " pass
 function password_check(){
 	passpattern1="^([a-zA-Z0-9!@#]{8,})$"
 	passpattern2="^([a-z0-9!@#]*)[A-Z]+([a-z0-9!@#]*$)"
+	passpattern3="^([a-zA-Z!@#]*[0-9])+([a-zA-Z!@#]*$)"
 	if [[ $pass =~ $passpattern1 ]]; then
-		if [[ $pass =~ $passpattern2 ]]; then	
-			echo "Password is Valid."
+		if [[ $pass =~ $passpattern2 ]]; then
+			if [[ $pass =~ $passpattern3 ]]; then
+				echo "Password is Valid."
+			else
+				echo "Error: Password should contain atleast one number. Please try again."
+			fi
 		else
 			echo "Error - At least one Upper case is required. Please try again"
 		fi
