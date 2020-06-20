@@ -12,7 +12,7 @@ else
 fi
 
 read -p "Enter your E-mail ID: " email
-email_pat="^[a-zA-Z0-9]*+/@[a-zA-Z]+/.[a-z.]{2,8}$";
+email_pat="^[a-zA-Z0-9]*+\@[a-zA-Z]+\.[a-z.]{2,8}$";
 function email_check(){
 	if [[ $email =~ $email_pat ]]; then
 		echo "$email - Email is Valid."
