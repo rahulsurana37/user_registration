@@ -14,7 +14,7 @@ else
 fi
 
 read -p "Enter your E-mail ID: " email
-email_pat="^[a-zA-Z0-9]+/@[a-zA-Z]+/.[a-z.]{2,8}$"
+email_pat="^[a-zA-Z0-9]+@[a-zA-Z]+/.[a-z]{2,8}$"
 function email_check(){
 	if [[ $email =~ $email_pat ]]; then
 		echo "Email is Valid." $email
@@ -25,7 +25,7 @@ function email_check(){
 email_check
 
 read -p "Enter your Mobile Number with Country Code: " mobile
-mobile_pat="^[0-9+]{3}[[:space:][0-9]{10}$";
+mobile_pat="^[0-9+]{3}[[:space:]][0-9]{10}$";
 function mobile_check(){
 	if [[ $mobile =~ $mobile_pat ]]; then
 		echo "$mobile is Valid."
