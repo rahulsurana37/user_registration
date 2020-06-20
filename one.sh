@@ -25,7 +25,7 @@ function email_check(){
 email_check
 
 read -p "Enter your Mobile Number with Country Code: " mobile
-mobile_pat="^[0-9+]{3}[[:space:][0-9]{10}$";
+mobile_pat="^[0-9+]{3}[[:space:]][0-9]{10}$";
 function mobile_check(){
 	if [[ $mobile =~ $mobile_pat ]]; then
 		echo "$mobile is Valid."
