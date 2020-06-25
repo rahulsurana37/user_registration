@@ -4,12 +4,15 @@ echo "Welcome to User Registration Exercise"
 read -p "Enter First Name: " first
 read -p "Enter Second Name: " second
 name_pat="^[A-Z]{1}[a-z]{2,}$";
+function name(){
 if [[ $first =~ $name_pat && $second =~ $name_pat ]]
 then
 	echo "Valid Name";
 else
 	echo "Invalid Name. Please Re-Enter!";
 fi
+}
+name
 
 read -p "Enter your E-mail ID: " email
 email_pat="^[a-zA-Z0-9._+-]+@[a-zA-Z]+\.[a-z]{2,8}$";
